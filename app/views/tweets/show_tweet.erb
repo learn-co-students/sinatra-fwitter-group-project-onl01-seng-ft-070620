@@ -1,0 +1,8 @@
+<h2>Tweet from <%= @tweet.user %></h2>
+
+<p><% @tweet.content %></p>
+
+<% if logged_in? %>
+  <a href="/tweets/<%= @tweet.id %>/edit">Edit Tweet</a>
+  <a href="">Delete Tweet</a>
+<% end %>
