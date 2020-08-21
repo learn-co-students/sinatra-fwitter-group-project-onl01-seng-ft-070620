@@ -45,9 +45,9 @@ class UsersController < ApplicationController
     end
   end
 
-# error message seems to be using a #slug method?
-  get '/users/:id' do
-    @user = current_user
+# needed to add a simple @slug method in User class to return current user's username
+  get '/users/:username' do
+    @user = User.find_by(username: params[:username])
     erb :'/users/show'
   end
 
