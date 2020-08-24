@@ -6,5 +6,6 @@ end
 
 use Rack::MethodOverride
 use TweetsController
+# use SessionsController
 use UsersController
 run ApplicationController
