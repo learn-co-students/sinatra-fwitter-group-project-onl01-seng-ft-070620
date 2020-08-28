@@ -23,13 +23,17 @@ class ApplicationController < Sinatra::Base
   post '/signup' do
     redirect '/' if logged_in?
     user = User.create(params)
-    binding.pry
     if user.valid?
       session[:user_id] = user.id
       redirect '/tweets'
     else
       redirect '/signup'
     end
+  end
+
+  get '/login' do
+    redirect '/tweets' if logged_in?
+
   end
 
   helpers do
